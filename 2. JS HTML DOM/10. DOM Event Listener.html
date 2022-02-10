@@ -1,0 +1,204 @@
+The addEventListener() method
+<body>
+    <button id="mybtn">Click Me</button>
+    <p id="gk"></p>
+    <script>
+        let a = document.getElementById("mybtn"); 
+        a.addEventListener("click", myFunc); 
+        function myFunc(){
+            document.getElementById("gk").innerHTML = Date(); 
+        }
+    </script>
+</body>
+
+**********************
+
+Add an Event Handler to an Element
+<body>
+    <button id="mybtn">Click Me</button>
+    <p id="gk"></p>
+    <script>
+        let a = document.getElementById("mybtn"); 
+        a.addEventListener("click", myFunc); 
+        function myFunc(){
+            alert("Hello World"); 
+        }
+    </script>
+</body>
+Or, 
+		let a = document.getElementById("mybtn");
+        a.addEventListener("click", function (){
+            alert("Hello world");
+        }); 
+
+
+**************************
+
+Add Many Event Handlers to the Same Element
+<body>
+    <button id="mybtn">Click Me</button>
+    <script>
+        let a = document.getElementById("mybtn"); 
+        a.addEventListener("click", myFunc1); 
+        a.addEventListener("click", myFunc2); 
+        function myFunc1(){
+            alert("I am myFunc1"); 
+        }
+        function myFunc2(){
+            alert("I am myFunc2"); 
+        }
+    </script>
+</body>
+
+***********************************
+
+We can add events of different types to the same element:
+<body>
+    <button id="mybtn">Click Me</button>
+    <p id="gk"></p>
+    <script>
+        let a = document.getElementById("mybtn"); 
+        a.addEventListener("mouseover", over); 
+        a.addEventListener("click", clik);
+        a.addEventListener("mouseout", out);  
+        function over(){
+            document.getElementById("gk").innerHTML += "Mouse Over<br>"; 
+        }
+        function clik(){
+            document.getElementById("gk").innerHTML += "Clicked<br>"; 
+        }
+        function out(){
+            document.getElementById("gk").innerHTML += "Mouse out<br>"; 
+        }
+        //+ sign gulo na dileo hoby. 
+    </script>
+</body>
+
+******************************
+
+Add an Event Handler to the window Object
+<body>
+    <p id="gk"></p>
+    <script>
+        window.addEventListener("resize", myFunc); 
+        function myFunc(){
+            document.getElementById("gk").innerHTML = Math.random(); 
+        }
+    </script>
+</body>
+
+****************************
+
+Passing Parameters
+<body>
+    <p>Press the button to show the value</p>
+    <button id="mybtn">Click Me</button>
+    <p id="gk"></p>
+    <script>
+        let x = 10; 
+        let y = 5; 
+        let a = document.getElementById("mybtn"); 
+        a.addEventListener("click", myFunc); 
+        function myFunc(){
+            document.getElementById("gk").innerHTML = x * y; 
+        }
+    </script>
+</body>
+Or, 
+When passing parameter values, use an "anonymous function" that calls the specified function with the parameters
+<body>
+    <p>Press the button to show the value</p>
+    <button id="mybtn">Click Me</button>
+    <p id="gk"></p>
+    <script>
+        let x = 10; 
+        let y = 5; 
+        let a = document.getElementById("mybtn"); 
+        a.addEventListener("click", function (){
+            myFunc(x, y); 
+        }); 
+        function myFunc(x, y){
+            document.getElementById("gk").innerHTML = x * y; 
+        }
+    </script>
+</body>
+
+******************************
+
+Event Bubbling or Event Capturing
+There are two ways of event propagation in the HTML DOM, bubbling and capturing.
+-Event propagation is a way of defining the element order when an event occurs. If you have a <p> element inside a <div> element, and the user clicks on the <p> element, which element's "click" event should be handled first?
+-In bubbling the inner most element's event is handled first and then the outer: the <p> element's click event is handled first, then the <div> element's click event.
+-In capturing the outer most element's event is handled first and then the inner: the <div> element's click event will be handled first, then the <p> element's click event.
+-The default value is false, which will use the bubbling propagation, when the value is set to true, the event uses the capturing propagation.
+
+<style>
+    #div1, #div2{
+        background: greenyellow;
+        padding: 10px;
+    }
+    #id1, #id2{
+        background: orange;
+        padding: 5px;
+        font-size: 20px;
+        font-family: Arial;
+        border: 1px solid;
+    }
+</style>
+<body>
+    <div id="div1">
+        <h2>Bubbling</h2>
+        <p id="id1">Click Me</p>
+    </div><br>
+    <div id="div2">
+        <h2>Capturing</h2>
+        <p id="id2">Click Me</p>
+    </div>
+    <script>
+        let a1 = document.getElementById("id1"); 
+        a1.addEventListener("click", function (){
+            alert("You click the orange element"); 
+        }, false)
+        let a2 = document.getElementById("div1"); 
+        a2.addEventListener("click", function (){
+            alert("You click the green element"); 
+        }, false)
+
+        let b1 = document.getElementById("id2"); 
+        b1.addEventListener("click", function (){
+            alert("You click the orange element"); 
+        }, true)
+        let b2 = document.getElementById("div2"); 
+        b2.addEventListener("click", function (){
+            alert("You click the green element"); 
+        }, true)
+    </script>
+</body>
+
+******************************
+
+The removeEventListener() method
+<style>
+    #mydiv{
+        background: greenyellow;
+        width: 500px;
+        height: 100px;
+    }
+</style>
+<body>
+    <div id="mydiv">
+        <p>Click the button to remove the div event handler</p>
+        <button id="mybtn" onclick="removeHandler()">Remove</button>
+    </div>
+    <p id="gk"></p>
+    <script>
+        let a = document.getElementById("mydiv"); 
+        a.addEventListener("mouseover", myFunc); 
+        function myFunc(){
+            document.getElementById("gk").innerHTML = Math.random(); 
+        }
+        function removeHandler(){
+            document.getElementById("mydiv").removeEventListener("mouseover", myFunc); 
+        }
+    </script>
+</body>

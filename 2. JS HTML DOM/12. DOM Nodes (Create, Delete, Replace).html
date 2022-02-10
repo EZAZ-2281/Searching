@@ -1,0 +1,79 @@
+Creating New HTML Elements (Nodes)
+<body>
+    <div id="mydiv">
+        <p id="id1">Golam kibria</p>
+        <p id="id2">Daffodil Varisty</p>
+    </div>
+    <script>
+        let a = document.createElement("p"); 
+        let b = document.createTextNode("Dhaka, Bangladesh"); 
+        a.appendChild(b); 
+        let c = document.getElementById("mydiv"); 
+        c.appendChild(a); 
+    </script>
+</body>
+
+*****************************
+
+Creating new HTML Elements - insertBefore()
+<body>
+    <div id="mydiv">
+        <p id="id1">Golam kibria</p>
+        <p id="id2">Daffodil Varisty</p>
+    </div>
+    <script>
+        let a = document.createElement("p"); 
+        let b = document.createTextNode("Dhaka, Bangladesh"); 
+        a.appendChild(b); 
+        let c = document.getElementById("mydiv"); 
+        let d = document.getElementById("id1"); 
+        c.insertBefore(a, d); 
+    </script>
+</body>
+
+*******************************
+
+Removing a Child Node
+<body>
+    <div id="mydiv">
+        <p id="id1">Golam kibria</p>
+        <p id="id2">Daffodil Varisty</p>
+    </div>
+    <script>
+        let a = document.getElementById("id1"); 
+        a.remove(); 
+    </script>
+</body>
+Or, 
+<body>
+    <div id="mydiv">
+        <p id="id1">Golam kibria</p>
+        <p id="id2">Daffodil Varisty</p>
+    </div>
+    <script>
+        let par = document.getElementById("mydiv"); 
+        let chi = document.getElementById("id1"); 
+        par.removeChild(chi); 
+    </script>
+</body>
+Find the child you want to remove, and use its parentNode property to find the parent
+chi.parentNode.removeChild(chi); 
+
+*************************
+
+Replacing HTML Elements 
+<body>
+    <div id="mydiv">
+        <p id="id1">Golam kibria</p>
+        <p id="id2">Daffodil Varisty</p>
+    </div>
+    <script>
+        let a = document.createElement("p"); 
+        let b = document.createTextNode("Dhaka, Bangladesh"); 
+        a.appendChild(b); 
+
+        let parent = document.getElementById("mydiv"); 
+        let child = document.getElementById("id1"); 
+        parent.replaceChild(a, child); 
+    </script>
+</body>

@@ -1,0 +1,35 @@
+DOM Node Lists
+<body>
+    <h2>JavaScript</h2>
+    <p>Golam kibria</p>
+    <p>Dhaka, Bangladesh</p>
+    <p id="gk"></p>
+    <script>
+        let a = document.querySelectorAll("p"); 
+        document.getElementById("gk").innerHTML = a[0].innerHTML; 
+        document.getElementById("gk").innerHTML = a.length; 
+    </script>
+</body>
+
+*************************
+
+<body>
+    <h2>JavaScript</h2>
+    <p>Golam kibria</p>
+    <p>Dhaka, Bangladesh</p>
+    <p>Daffodil Varisity</p>
+    <button onclick="myFunc()">Click Me</button>
+    <script>
+        function myFunc(){
+            let a = document.getElementsByTagName("p"); 
+            for(let i = 0; i < a.length; i++){
+                a[i].style.color = "red"; 
+            }
+        }
+    </script>
+</body>
+
+
+HTMLCollection items can be accessed by their name, id, or index number.
+NodeList items can only be accessed by their index number.
+Only the NodeList object can contain attribute nodes and text nodes.

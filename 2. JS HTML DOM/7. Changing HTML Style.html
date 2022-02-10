@@ -1,0 +1,26 @@
+*Changing HTML Style
+<body>
+    <p id="gk1">Golam Kibria</p>
+    <p id="gk">Daffodil Varsity</p>
+    <script>
+        document.getElementById("gk").style.color = "red"; 
+        document.getElementById("gk").style.fontFamily = "Arial"; 
+        document.getElementById("gk").style.fontSize = "large"; 
+    </script>
+</body>
+/********************************/
+
+*Using Events
+<body>
+    <p id="gk">Golam kibria</p>
+    <button type="button" onclick="document.getElementById('gk').style.color = 'red'">Click Me</button>  
+</body>
+/*********************************/
+
+*Visibility How to make an element invisible.
+<body>
+   <p id="gk">Golam kibria</p>
+
+   <input type="button" value="Show Text" onclick="document.getElementById('gk').style.visibility = 'visible'">
+   <input type="button" value="Hide Text" onclick="document.getElementById('gk').style.visibility = 'hidden'">
+</body>

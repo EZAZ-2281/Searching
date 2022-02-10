@@ -1,0 +1,61 @@
+<body>
+
+<p id="p1">Hello World!</p>
+
+<script>
+      document.getElementById("p1").innerHTML = "New text!";
+</script>
+
+</body>
+
+/******************************/
+
+<body>
+
+<h1 id="id01">Old Heading</h1>
+
+<script>
+const element = document.getElementById("id01");
+element.innerHTML = "New Heading";
+</script>
+
+</body>
+
+/****************************/
+*Dynamic HTML content
+<body>
+
+    <p id="demo"></p>
+    
+    <script>
+    document.getElementById("demo").innerHTML = "Date : " + Date();
+    </script>
+    
+</body>
+Output: Sun Feb 06 2022 23:29:09 GMT+0600 (Bangladesh Standard Time)
+
+/****************************/
+In JavaScript, document.write() can be used to write directly to the HTML output stream
+<body>
+    
+    <script>
+    document.write(Date());
+    </script>
+    
+</body>
+
+
+***Never use document.write() after the document is loaded. It will overwrite the document.
+
+
+/*****************************/
+Changing the Value of an Attribute
+<body>
+
+<img id="myImage" src="smiley.gif">
+
+<script>
+document.getElementById("myImage").src = "landscape.jpg";
+</script>
+
+</body>

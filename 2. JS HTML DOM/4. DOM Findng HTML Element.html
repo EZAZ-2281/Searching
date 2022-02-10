@@ -1,0 +1,83 @@
+*Finding HTML Element by Id
+<body>
+    <h2>JavaScript HTML DOM</h2>
+
+    <p id="intro">Finding HTML Elements by Id</p>
+    <p>This example demonstrates the <b>getElementsById</b> method.</p>
+    
+    <p id="demo"></p>
+    
+    <script>
+    const element = document.getElementById("intro");
+    
+    document.getElementById("demo").innerHTML = 
+    "The text from the intro paragraph is: " + element.innerHTML;
+    
+    </script>
+</body>
+If the element is found, the method will return the element as an object (in element).
+If the element is not found, element will contain null.
+
+
+
+*Finding HTML Elements by Tag Name
+<body>
+
+    <h2>JavaScript HTML DOM</h2>
+    
+    <p>Finding HTML Elements by Tag Name.</p>
+    <p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
+    
+    <p id="demo"></p>
+    
+    <script>
+    const element = document.getElementsByTagName("p");
+    
+    document.getElementById("demo").innerHTML = 'The text in first paragraph (index 0) is: ' + element[0].innerHTML;
+    
+    </script>
+    
+</body>
+<body>
+
+    <h2>JavaScript HTML DOM</h2>
+    
+    <div id="main">
+    <p>Finding HTML Elements by Tag Name</p>
+    <p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
+    </div>
+    
+    <p id="demo"></p>
+    
+    <script>
+    const x = document.getElementById("main");
+    const y = x.getElementsByTagName("p");
+    
+    document.getElementById("demo").innerHTML = 
+    'The first paragraph (index 0) inside "main" is: ' + y[0].innerHTML;
+    
+    </script>
+    
+</body>
+This example finds the element with id="main", and then finds all <p> elements inside "main"
+  
+  
+  
+  *Finding HTML Elements by Class Name
+  <body>
+
+    <h2>JavaScript HTML DOM</h2>
+    
+    <p>Finding HTML Elements by Class Name.</p>
+    <p class="intro">Hello World!</p>
+    <p class="intro">This example demonstrates the <b>getElementsByClassName</b> method.</p>
+    
+    <p id="demo"></p>
+    
+    <script>
+    const x = document.getElementsByClassName("intro");
+    document.getElementById("demo").innerHTML = 
+    'The first paragraph (index 0) with class="intro" is: ' + x[0].innerHTML;
+    </script>
+    
+</body>

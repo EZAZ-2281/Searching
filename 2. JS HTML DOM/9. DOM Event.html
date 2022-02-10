@@ -1,0 +1,170 @@
+In this example, the content of the <p> element is changed when a user clicks on it:
+<body>
+    <p onclick="this.innerHTML = 'Hi, Golam kibria'">Click Me</p>
+</body>
+
+*****************************
+
+In this example, a function is called from the event handler:
+<body>
+    <p onclick="myFunc(this)">Click Me</p>
+    <script>
+        function myFunc(ele){
+            ele.innerHTML = "Hi, Golam kibria"; 
+        }
+    </script>
+</body>
+
+*****************************
+
+When a button is clicked display the date
+<body>
+    <p>Click the Button to display the date</p>
+    <button onclick="myFunc()">The Date is?</button>
+    <p id="gk"></p>
+    <script>
+        function myFunc(){
+            document.getElementById("gk").innerHTML = Date(); 
+        }
+    </script>
+</body>
+
+***************************
+
+A function named myFunc is assigned to an HTML element with the id="mybtn"
+<body>
+    <p>Click the Button to display the date</p>
+    <button id="mybtn">The Date is?</button>
+    <p id="gk"></p>
+    <script>
+        document.getElementById("mybtn").onclick = myFunc; 
+        function myFunc(){
+            document.getElementById("gk").innerHTML = Date(); 
+        }
+    </script>
+</body>
+
+*****************************
+
+The onload and onunload Events
+<body onload="myFunc()">
+    <p id="gk"></p>
+    <script>
+        function myFunc(){
+            let text; 
+            if(navigator.cookieEnabled == true)
+                text = "Cookies are enable"; 
+            else    
+                text = "Cookies are not enable"; 
+
+            document.getElementById("gk").innerHTML = text; 
+        }
+    </script>
+</body>
+
+*****************************
+
+The onchange Event(toUpperCase())
+<body>
+    <p>Onchange Event</p>
+    Name: <input type="text" id="fname" onchange="myFunc()">
+    <p id="gk"></p>
+    <script>
+        function myFunc(){
+            let val = document.getElementById("fname"); 
+            val = val.value.toUpperCase(); 
+            //val.value = val.value.toUpperCase(); 
+            document.getElementById("gk").innerHTML = val; 
+        }
+    </script>
+</body>
+
+*****************************
+
+The onmouseover and onmouseout Events
+<body>
+    <p>The onmouseover and onmouseout event</p>
+    <div onmouseover="over(this)" onmouseout="out(this)">This is some tet</div>
+    <script>
+        function over(ob){
+            ob.innerHTML = "Kibria"; 
+        }
+        function out(ob){
+            ob.innerHTML = "Out"
+        }
+    </script>
+</body>
+
+*****************************
+
+The onmousedown, onmouseup and onclick Events
+The onmousedown, onmouseup, and onclick events are all parts of a mouse-click. First when a mouse-button is clicked, the onmousedown event is triggered, then, when the mouse-button is released, the onmouseup event is triggered, finally, when the mouse-click is completed, the onclick event is triggered.
+<body>
+    <p>onmousedown and onmouseup</p>
+    <div onmousedown="down(this)" onmouseup="up(this)" onclick="oc(this)" style="height: 30px; width: 300px; background: greenyellow; padding: 5%; text-align: center;">Click Me</div>
+    <p id="gk"></p>
+    <script>
+        function down(ob){
+            ob.style.background = "yellow"; 
+            ob.innerHTML = "Mouse is pressed"
+        }
+        function up(ob){
+            ob.style.background = "greenyellow"; 
+            ob.innerHTML = "Mouse is released"; 
+        }
+        function oc(ob){
+            document.getElementById("gk").innerHTML = "One clicked Happedned"; 
+        }
+    </script>
+</body>
+
+******************************
+
+onfocus-Change the background-color of an input field when it gets focus.
+<body>
+    <p>Working on onfocus</p>
+    Name: <input type="text" onfocus="myFunc(this)">
+    <script>
+        function myFunc(ob){
+            ob.style.background = "yellow"; 
+        }
+    </script>
+</body>
+
+****************************
+
+Mouse Events - Change the color of an element when the cursor moves over it.
+<body>
+    <p onmouseover="style.color = 'red'" onmouseout="style.color = 'pink'">Golam kibria</p>
+</body>
+
+****************************
+
+onload - Display an alert box when the page has finished loading.
+<body onload="myFunc()">
+    <script>
+        function myFunc(){
+            alert("Loading is finished"); 
+        }
+    </script>
+</body>
+
+*****************************
+
+onmousedown and onmouseup
+Change an image when a user holds down the mouse button.
+<body>
+    <img id="fimg" src="./vs3.jpg" width="400" height="400" onmousedown="down()" onmouseup="up()" alt="">
+    <p>click mouse and hold down</p>
+    <script>
+        function down(){
+            document.getElementById("fimg").src = "vs4.jpg"; 
+        }
+        function up(){
+            document.getElementById("fimg").src = "vs3.jpg"; 
+        }
+    </script>
+</body>
+  
+ 
+  ******************************

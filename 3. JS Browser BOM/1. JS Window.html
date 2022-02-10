@@ -1,0 +1,25 @@
+Window Size
+Both properties return the sizes in pixels:
+window.innerHeight - the inner height of the browser window (in pixels)
+window.innerWidth - the inner width of the browser window (in pixels)
+The browser window (the browser viewport) is NOT including toolbars and scrollbars.
+
+<body>
+    <h2>JavaScript Window</h2>
+    <p id="gk"></p>
+    <script>
+        let a = document.getElementById("gk"); 
+        a.innerHTML = "Height: " +window.innerHeight + " Width: " + window.innerWidth; 
+    </script>
+</body>
+
+****************************
+
+Other Window Methods
+
+window.open() - open a new window
+window.close() - close the current window
+window.moveTo() - move the current window
+window.resizeTo() - resize the current window
+
+***************************

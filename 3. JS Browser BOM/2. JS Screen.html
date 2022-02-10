@@ -1,0 +1,31 @@
+Window Screen
+The window.screen object contains information about the user's screen.
+The window.screen object can be written without the window prefix.
+
+Properties:
+screen.width
+screen.height
+screen.availWidth
+screen.availHeight
+screen.colorDepth
+screen.pixelDepth
+
+The screen.colorDepth property returns the number of bits used to display one color.
+The screen.pixelDepth property returns the pixel depth of the screen.
+For modern computers, Color Depth and Pixel Depth are equal.
+
+<body>
+    <h2>JavaScript Window</h2>
+    <p id="gk"></p>
+    <script>
+        let a = document.getElementById("gk"); 
+        a.innerHTML = "Width: "+screen.width; 
+        a.innerHTML = "Height: "+screen.height; 
+        a.innerHTML = "Available width: "+screen.availWidth; 
+        a.innerHTML = "Available height: "+screen.availHeight; 
+        a.innerHTML = "Color depth: "+screen.colorDepth; //24
+        a.innerHTML = "Pixel depth: "+screen.pixelDepth; //24
+    </script>
+</body>
+
+***************************
